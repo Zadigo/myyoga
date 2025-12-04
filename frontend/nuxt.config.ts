@@ -17,6 +17,13 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt'
   ],
 
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    }
+  },
+
   vite: {
     plugins: [tailwind()]
   },

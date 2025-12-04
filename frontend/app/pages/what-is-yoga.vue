@@ -1,24 +1,26 @@
 <template>
-  <div id="main" role="main" class="mb-20 px-10 space-y-10 mt-[calc(70px+1rem)]">
+  <div id="main" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)] overflow-hidden">
     <!-- Header -->
     <div>
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
         <div class="rounded-3xl overflow-hidden">
-          <nuxt-img src="/images/yoga2.jpg" class="aspect-square object-cover" alt="" />
+          <client-only>
+            <nuxt-img v-motion-slide-left :delay="500" src="/images/yoga2.jpg" class="aspect-square object-cover" alt="" />
+          </client-only>
         </div>
 
-        <div class="rounded-3xl bg-primary-800 px-10 xl:px-30 p-10 text-primary-50 flex-col content-center">
+        <motion tag="div" preset="slideRight" :delay="500" class="rounded-3xl bg-primary-800 px-10 xl:px-30 p-10 text-primary-50 flex-col content-center">
           <p>Discover Yoga | What is Yoga?</p>
           <div class="space-y-10">
             <h2 class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">A Practice of Transformation That Unites Body, Mind, and Spirit</h2>
             <p class="leading-7">Yoga is an ancient practice that combines physical postures, breathing techniques, and meditation to promote overall well-being. It originated in India thousands of years ago and has since evolved into various styles and forms practiced worldwide.</p>
           </div>
-        </div>
+        </motion>
       </div>
     </div>
 
     <!-- Overview -->
-    <div class="p-10 xl:p-30 rounded-3xl bg-primary-100 mx-auto space-y-5">
+    <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-primary-100 dark:bg-primary-800 mx-auto space-y-5">
       <p>Overview</p>
 
       <h2 class="text-3xl xl:text-6xl font-bold">
@@ -29,5 +31,87 @@
         Yoga is more than an individual practice—it’s a path to connection, shared knowledge, community care, and global well-being.
       </p>
     </div>
+
+    <!-- Pricing -->
+    <div class="p-10 rounded-3xl mx-auto space-y-5">
+      <div class="text-center space-y-2">
+        <p class="font-bold">Creating Your Practice</p>
+        <h2 class="text-4xl font-bold">Finding Your Practice</h2>
+        <p class="max-w-4xl mx-auto">At Yoga Alliance, we embrace a wide variety of approaches to yoga. Our directories recognize the following descriptions to categorize the different types of yoga when you are searching for a teacher or a school.</p>
+      </div>
+
+      <div class="max-w-400 overflow-hidden">
+        <div id="pricing" class="flex space-x-5 overflow-x-scroll p-5">
+          <div v-for="item in pricingDetails" id="price" :key="item.title" :class="`${item.color} min-w-80 rounded-3xl p-10 flex-col justify-between`">
+            <span class="font-bold">
+              {{ item.title }}
+            </span>
+  
+            <h4 class="font-bold text-5xl">
+              ${{ item.price }}<span class="text-sm">/mo</span>
+            </h4>
+  
+            <hr class="my-10 text-primary-50">
+  
+            <ul class="leading-7">
+              <li v-for="(feature, idx) in item.features" :key="idx">
+                {{ feature }}
+              </li>
+            </ul>
+  
+            <nuxt-button class="mt-15" block>
+              {{ item.buttonText }}
+            </nuxt-button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const pricingDetails = [
+  {
+    title: 'Basic Plan',
+    price: 29,
+    features: ['5 Projects', '10 GB Storage', 'Basic Support', 'Community Access', 'Basic code review'],
+    buttonText: 'Get Started',
+    color: 'bg-primary-100 dark:bg-primary-800'
+  },
+  {
+    title: 'Pro Plan',
+    price: 79,
+    mostPopular: true,
+    features: ['50 Projects', '100 GB Storage', 'Priority Support', 'Team Collaboration', 'Advanced Analytics', 'Premium Code Review'],
+    buttonText: 'Upgrade Now',
+    color: 'bg-primary-100 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    price: 149,
+    features: ['Unlimited Projects', '1 TB Storage', '24/7 Dedicated Support', 'Custom Integrations', 'SLA Guarantee'],
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-100 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    price: 149,
+    features: ['Unlimited Projects', '1 TB Storage', '24/7 Dedicated Support', 'Custom Integrations', 'SLA Guarantee'],
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-100 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    price: 149,
+    features: ['Unlimited Projects', '1 TB Storage', '24/7 Dedicated Support', 'Custom Integrations', 'SLA Guarantee'],
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-100 dark:bg-primary-800'
+  }
+]
+</script>
+
+<style scoped>
+#pricing::-webkit-scrollbar {
+  display: none;
+}
+</style>

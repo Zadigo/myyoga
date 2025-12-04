@@ -43,9 +43,10 @@
 const transparentTokens = ['bg-transparent', 'text-primary-50', 'shadow-[0px_4px_25px_0px_#0000000D]']
 const coloredTokens = ['bg-primary-50', 'text-primary-900', 'shadow-lg']
 
+
 if (import.meta.client) {
   const { y } = useScroll(window.document)
-
+  
   watch(y , (newValue) => {
     if (newValue > 10) {
       document.querySelector('nav')?.classList.add(...coloredTokens)

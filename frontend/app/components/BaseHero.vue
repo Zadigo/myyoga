@@ -24,8 +24,17 @@
     </div>
 
     <!-- Video -->
-    <video class="absolute top-0 z-1 w-full h-screen aspect-video object-cover" muted loop>
-      <source src="/vid1.mp4" type="video/mp4">
-    </video>
+     <client-only>
+      <template #default>
+        <video class="absolute top-0 z-1 w-full h-screen aspect-video object-cover" autoplay muted loop>
+          <source src="/vid1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </template>
+
+       <template #placeholder>
+         <div class="absolute top-0 z-1 w-full h-screen bg-primary-800" />
+       </template>
+     </client-only>
   </section>
 </template>

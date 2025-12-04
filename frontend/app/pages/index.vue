@@ -1,5 +1,5 @@
 <template>
-  <div id="main" role="main" class="mb-20">
+  <div id="main" role="main" class="mb-20 overflow-hidden">
     <!-- Hero -->
     <base-hero />
 

@@ -40,3 +40,18 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-title);
     font-weight: var(--font-weight-bold);
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+.page-leave-from,
+.page-enter-to {
+  opacity: 1;
+}
