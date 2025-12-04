@@ -14,6 +14,11 @@
           </client-only>
 
           <p class="leading-7">Yoga Alliance partners with studios and schools to expand access to yoga worldwide. Build credibility, access valuable resources, and strengthen your impact with the support of our global network.</p>
+
+          <nuxt-button class="mt-8" size="xl" round>
+            <icon name="i-lucide:external-link" />
+            Learn more
+          </nuxt-button>
         </div>
       </div>
     </section>

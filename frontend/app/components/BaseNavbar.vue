@@ -8,10 +8,10 @@
     </nuxt-link>
 
     <ul class="md:flex hidden items-center gap-10">
-      <li><a class="hover:text-gray-500/80 transition" href="#">Home</a></li>
-      <li><a class="hover:text-gray-500/80 transition" href="#">Services</a></li>
-      <li><a class="hover:text-gray-500/80 transition" href="#">Portfolio</a></li>
-      <li><a class="hover:text-gray-500/80 transition" href="#">Pricing</a></li>
+      <li><a class="hover:text-green-500/80 text-lg text-bold transition" href="#">Home</a></li>
+      <li><a class="hover:text-green-500/80 text-lg text-bold transition" href="#">Services</a></li>
+      <li><a class="hover:text-green-500/80 text-lg text-bold transition" href="#">Portfolio</a></li>
+      <li><a class="hover:text-green-500/80 text-lg text-bold transition" href="#">Pricing</a></li>
     </ul>
 
     <button type="button" class="bg-white text-gray-600 border border-gray-300 md:inline hidden text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full">
@@ -33,7 +33,7 @@
       </ul>
 
       <button type="button" class="bg-white text-gray-600 border border-gray-300 mt-6 text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full">
-        Get started
+        Request a meeting
       </button>
     </div>
   </nav>

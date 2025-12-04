@@ -1,5 +1,5 @@
 <template>
-  <div id="main" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)] overflow-hidden">
+  <div id="what-is-yoga" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)] overflow-hidden">
     <!-- Header -->
     <div>
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
@@ -9,13 +9,15 @@
           </client-only>
         </div>
 
-        <motion tag="div" preset="slideRight" :delay="500" class="rounded-3xl bg-primary-800 px-10 xl:px-30 p-10 text-primary-50 flex-col content-center">
-          <p>Discover Yoga | What is Yoga?</p>
-          <div class="space-y-10">
-            <h2 class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">A Practice of Transformation That Unites Body, Mind, and Spirit</h2>
-            <p class="leading-7">Yoga is an ancient practice that combines physical postures, breathing techniques, and meditation to promote overall well-being. It originated in India thousands of years ago and has since evolved into various styles and forms practiced worldwide.</p>
-          </div>
-        </motion>
+        <client-only>
+          <motion tag="div" preset="slideRight" :delay="500" class="rounded-3xl bg-primary-800 px-10 xl:px-30 p-10 text-primary-50 flex-col content-center">
+            <p>Discover Yoga | What is Yoga?</p>
+            <div class="space-y-10">
+              <h2 class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">A Practice of Transformation That Unites Body, Mind, and Spirit</h2>
+              <p class="leading-7">Yoga is an ancient practice that combines physical postures, breathing techniques, and meditation to promote overall well-being. It originated in India thousands of years ago and has since evolved into various styles and forms practiced worldwide.</p>
+            </div>
+          </motion>
+        </client-only>
       </div>
     </div>
 
@@ -49,6 +51,14 @@
               </h4>
 
               <p class="mt-5 w-150">Explore how yoga supports mental well-being by cultivating mindfulness, easing stress, and enhancing emotional resilience.</p>
+            </template>
+
+            <template #content="{ item }">
+              <div class="grid grid-cols-3 gap-2 py-10">
+                <nuxt-link v-for="benefit in item.benefits" :key="benefit" :to="`/research/${item.category}`" class="block p-3 bg-brand-100 dark:bg-brand-700 rounded-lg hover:bg-brand-200 dark:hover:bg-brand-600 text-center">
+                  {{ benefit }}
+                </nuxt-link>
+              </div>
             </template>
           </nuxt-accordion>
         </div>
@@ -93,7 +103,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AccordionItem } from '@nuxt/ui';
+import type { AccordionItem } from '@nuxt/ui'
 
 const pricingDetails = [
   {
@@ -136,16 +146,22 @@ const pricingDetails = [
 
 const accordionItems = ref<AccordionItem[]>([
   {
-    label: 'Icons',
-    content: 'You have nothing to do, @nuxt/icon will handle it automatically.'
+    label: 'Mental Benefits',
+    content: 'Explore how yoga supports mental well-being by cultivating mindfulness, easing stress, and enhancing emotional resilience.',
+    benefits: ['Mindfulness', 'Stress Reduction', 'Emotional Resilience'],
+    category: 'cancer'
   },
   {
-    label: 'Colors',
-    content: 'Choose a primary and a neutral color from your Tailwind CSS theme.'
+    label: 'Physical Benefits',
+    content: 'Choose a primary and a neutral color from your Tailwind CSS theme.',
+    benefits: ['Mindfulness', 'Stress Reduction', 'Emotional Resilience'],
+    category: 'cancer'
   },
   {
-    label: 'Components',
-    content: 'You can customize components by using the `class` / `ui` props or in your app.config.ts.'
+    label: 'Collective Benefits',
+    content: 'You can customize components by using the `class` / `ui` props or in your app.config.ts.',
+    benefits: ['Mindfulness', 'Stress Reduction', 'Emotional Resilience'],
+    category: 'cancer'
   }
 ])
 </script>
