@@ -23,17 +23,17 @@
     --color-green-950: #050c0c;
 
     /* Define new custom color */
-    --color-brand-50: #fef2f2;
-    --color-brand-100: #fee2e2;
-    --color-brand-200: #fecaca;
-    --color-brand-300: #fca5a5;
-    --color-brand-400: #f87171;
-    --color-brand-500: #ef4444;
-    --color-brand-600: #dc2626;
-    --color-brand-700: #b91c1c;
-    --color-brand-800: #991b1b;
-    --color-brand-900: #7f1d1d;
-    --color-brand-950: #450a0a;
+    --color-brand-50: #f7f0f4;
+    --color-brand-100: #e8d1de;
+    --color-brand-200: #d9b2c8;
+    --color-brand-300: #d1a3bd;
+    --color-brand-400: #c184a7;
+    --color-brand-500: #b26591;
+    --color-brand-600: #a05b83;
+    --color-brand-700: #8e5174;
+    --color-brand-800: #6b3d57;
+    --color-brand-900: #24141d;
+    --color-brand-950: #000000;
 }
 
 h1, h2, h3, h4, h5, h6 {

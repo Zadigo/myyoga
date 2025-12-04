@@ -32,6 +32,29 @@
       </p>
     </div>
 
+    <!-- Research -->
+    <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-brand-100 dark:bg-brand-800 mx-auto space-y-5">
+      <div class="grid grid-cols-2">
+        <div class="space-y-4 w-130 text-left">
+          <h2 class="text-3xl font-bold mb-5">Exploring Yoga’s Benefits Through Research</h2>
+          <p class="leading-7">We aggregate research that explores yoga’s profound effects and empowers teachers, schools, and practitioners with evidence-based knowledge.</p>
+          <p class="leading-7">Check out the resources below to learn more about yoga’s impact on specific areas of mental, physical, and collective health.</p>
+        </div>
+
+        <div>
+          <nuxt-accordion :items="accordionItems">
+            <template #default="{ item }">
+              <h4 class="text-3xl">
+                {{ item.label }}
+              </h4>
+
+              <p class="mt-5 w-150">Explore how yoga supports mental well-being by cultivating mindfulness, easing stress, and enhancing emotional resilience.</p>
+            </template>
+          </nuxt-accordion>
+        </div>
+      </div>
+    </div>
+
     <!-- Pricing -->
     <div class="p-10 rounded-3xl mx-auto space-y-5">
       <div class="text-center space-y-2">
@@ -46,19 +69,19 @@
             <span class="font-bold">
               {{ item.title }}
             </span>
-  
+
             <h4 class="font-bold text-5xl">
               ${{ item.price }}<span class="text-sm">/mo</span>
             </h4>
-  
+
             <hr class="my-10 text-primary-50">
-  
+
             <ul class="leading-7">
               <li v-for="(feature, idx) in item.features" :key="idx">
                 {{ feature }}
               </li>
             </ul>
-  
+
             <nuxt-button class="mt-15" block>
               {{ item.buttonText }}
             </nuxt-button>
@@ -70,6 +93,8 @@
 </template>
 
 <script setup lang="ts">
+import type { AccordionItem } from '@nuxt/ui';
+
 const pricingDetails = [
   {
     title: 'Basic Plan',
@@ -108,6 +133,21 @@ const pricingDetails = [
     color: 'bg-primary-100 dark:bg-primary-800'
   }
 ]
+
+const accordionItems = ref<AccordionItem[]>([
+  {
+    label: 'Icons',
+    content: 'You have nothing to do, @nuxt/icon will handle it automatically.'
+  },
+  {
+    label: 'Colors',
+    content: 'Choose a primary and a neutral color from your Tailwind CSS theme.'
+  },
+  {
+    label: 'Components',
+    content: 'You can customize components by using the `class` / `ui` props or in your app.config.ts.'
+  }
+])
 </script>
 
 <style scoped>
