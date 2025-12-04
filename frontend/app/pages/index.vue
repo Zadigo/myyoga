@@ -24,12 +24,12 @@
     </section>
 
     <!-- Section 1 -->
-    <section id="intermediate-2" class="p-10 xl:p-20 max-w-full text-center xl:max-w-400 mx-auto">
-      <h1 class="text-5xl text-primary-900 font-bold mb-5">
+    <section id="intermediate-2" class="p-10 xl:p-20 max-w-full text-center xl:max-w-400 mx-auto text-primary-900 dark:text-primary-50">
+      <h1 class="text-5xl font-bold mb-5">
         Why Yoga? Why Now?
       </h1>
 
-      <p class="text-primary-900 max-w-lg mx-auto leading-7">Yoga is more than a physical practice—it’s a pathway to well-being for individuals and communities alike:</p>
+      <p class="max-w-lg mx-auto leading-7">Yoga is more than a physical practice—it’s a pathway to well-being for individuals and communities alike:</p>
 
       <div class="grid grid-cols-1 xl:grid-cols-3">
         <div class="p-10 flex-col place-items-center">

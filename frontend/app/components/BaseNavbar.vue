@@ -14,9 +14,10 @@
       <li><a class="hover:text-green-500/80 text-lg text-bold transition" href="#">Pricing</a></li>
     </ul>
 
-    <button type="button" class="bg-white text-gray-600 border border-gray-300 md:inline hidden text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full">
-      Get started
-    </button>
+    <nuxt-button to="/booking" class="rounded-full" size="xl" color="neutral">
+      <icon name="lucide:calendar-clock" />
+      Request demo
+    </nuxt-button>
 
     <button aria-label="menu-btn" type="button" class="menu-btn inline-block md:hidden active:scale-90 transition">
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="#000">

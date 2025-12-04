@@ -16,10 +16,10 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-5 xl:gap-10">
         <nuxt-link v-for="(action, idx) in actions" :key="idx" to="/what-is-yoga" class="block">
           <div class="relative group p-5 xl:p-8 rounded-xl bg-linear-to-tr from-slate-100/30 via-slate-200/50 to-slate-500/50 cursor-pointer transition-all ease-in-out hover:-translate-y-2 text-center">
-            <p class="text-lg text-light">{{ action.title }}</p>
-            <p class="font-bold text-3xl">{{ action.subtitle }}</p>
+            <p class="text-sm xl:text-lg text-light">{{ action.title }}</p>
+            <p class="text-xl md:text-lg xl:text-3xl font-bold">{{ action.subtitle }}</p>
 
-            <div class="absolute top-3 right-3 w-10 h-10 bg-brand-500 rounded-full border-3 border-primary-50 text-primary-50 flex items-center justify-center transition-all ease-in-out group-hover:-rotate-20">
+            <div class="absolute top-3 right-3 w-10 h-10 bg-brand-500 rounded-full border-3 border-primary-50 text-primary-50 hidden xl:flex items-center justify-center transition-all ease-in-out group-hover:-rotate-20">
               <icon name="lucide:square-arrow-out-up-right" />
             </div>
           </div>
@@ -52,7 +52,7 @@ const actions = [
   },
   {
     title: "I want to deepen my practice",
-    subtitle: "Explore advanced techniques",
+    subtitle: "Explore techniques",
     link: "/advanced-yoga"
   },
   {

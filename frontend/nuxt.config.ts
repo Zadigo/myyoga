@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxt/ui',
     '@vueuse/nuxt',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/i18n'
   ],
 
   app: {
@@ -51,5 +52,13 @@ export default defineNuxtConfig({
         preload: true
       }
     ]
+  },
+
+  i18n: {
+    locales: [
+      { code: 'en', language: 'en-US' },
+      { code: 'fr', language: 'fr-FR' }
+    ],
+    defaultLocale: 'en',
   }
 })
