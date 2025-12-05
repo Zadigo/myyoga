@@ -25,3 +25,5 @@ logs
 
 **/*.mp4
 **/environment/*.env
+playwright-report/
+test-results/
