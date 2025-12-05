@@ -16,6 +16,8 @@ describe('Hero Component', () => {
     ctas.forEach((item) => {
       expect(item.element.tagName).toBe('A')
       expect(item.attributes('href')).not.toBe('')
+      expect(item.attributes('id')).toBeDefined()
+      expect(item.attributes('disabled')).toBeUndefined()
     })
 
     // Check that we have a video element

@@ -14,7 +14,7 @@
       <li><a class="hover:text-green-500/80 text-lg text-bold transition" href="#">Pricing</a></li>
     </ul>
 
-    <nuxt-button to="/booking" class="rounded-full" size="xl" color="neutral">
+    <nuxt-button id="cta-navbar" to="/booking" class="rounded-full" size="xl" color="neutral">
       <icon name="lucide:calendar-clock" />
       Request demo
     </nuxt-button>
@@ -43,7 +43,6 @@
 <script setup lang="ts">
 const transparentTokens = ['bg-transparent', 'text-primary-50', 'shadow-[0px_4px_25px_0px_#0000000D]']
 const coloredTokens = ['bg-primary-50', 'text-primary-900', 'shadow-lg']
-
 
 if (import.meta.client) {
   const { y } = useScroll(window.document)

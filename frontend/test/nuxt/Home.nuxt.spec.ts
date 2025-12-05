@@ -19,6 +19,7 @@ describe('Home Page', () => {
       expect(item.attributes('href')).toBeDefined()
       
       // Check if the button is clickable by simulating a click event
+      expect(item.attributes('disabled')).toBeUndefined()
       item.trigger('click')
     })
   })

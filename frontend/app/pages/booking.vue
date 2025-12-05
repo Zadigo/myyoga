@@ -14,14 +14,14 @@
           <p>Please fill in your details to book a session.</p>
         </div>
 
-        <form class="space-y-5" @submit.prevent>
+        <form id="booking-form" class="space-y-5" @submit.prevent>
           <div class="grid grid-cols-1 lg:grid-cols-4 gap-2">
-            <nuxt-input class="col-span-4 lg:col-span-2" size="xl" placeholder="Firstname" />
-            <nuxt-input class="col-span-4 lg:col-span-2" size="xl" placeholder="Lastname" />
-            <nuxt-input class="col-span-4 lg:col-span-4" size="xl" placeholder="Email" />
+            <nuxt-input class="col-span-4 lg:col-span-2" size="xl" name="firstname" placeholder="Firstname" />
+            <nuxt-input class="col-span-4 lg:col-span-2" size="xl" name="lastname" placeholder="Lastname" />
+            <nuxt-input class="col-span-4 lg:col-span-4" size="xl" name="email" placeholder="Email" />
 
             <div class="mt-10 xl:mt-0 flex justify-end">
-              <nuxt-button size="xl">
+              <nuxt-button id="cta-book-meeting" size="xl">
                 <icon name="lucide:check" />
                 Submit
               </nuxt-button>
