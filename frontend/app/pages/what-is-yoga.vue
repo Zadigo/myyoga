@@ -25,7 +25,7 @@
     <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-primary-100 dark:bg-primary-800 mx-auto space-y-5">
       <p>Overview</p>
 
-      <h2 class="text-3xl xl:text-6xl font-bold">
+      <h2 class="text-3xl xl:text-7xl font-bold">
         Whether you’re new to yoga or looking to deepen your understanding, <span class="text-primary-300">you’re in the right place.</span>
       </h2>
 
@@ -38,7 +38,7 @@
     <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-brand-100 dark:bg-brand-800 mx-auto space-y-5">
       <div class="grid grid-cols-2">
         <div class="space-y-4 w-130 text-left">
-          <h2 class="text-3xl font-bold mb-5">Exploring Yoga’s Benefits Through Research</h2>
+          <h2 class="text-4xl font-bold mb-5">Exploring Yoga’s Benefits Through Research</h2>
           <p class="leading-7">We aggregate research that explores yoga’s profound effects and empowers teachers, schools, and practitioners with evidence-based knowledge.</p>
           <p class="leading-7">Check out the resources below to learn more about yoga’s impact on specific areas of mental, physical, and collective health.</p>
         </div>
@@ -46,7 +46,7 @@
         <div>
           <nuxt-accordion :items="accordionItems">
             <template #default="{ item }">
-              <h4 class="text-3xl">
+              <h4 class="text-4xl">
                 {{ item.label }}
               </h4>
 
