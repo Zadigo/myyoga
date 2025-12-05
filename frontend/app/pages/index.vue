@@ -108,10 +108,10 @@
     </section>
 
     <!-- Newsletter -->
-    <section id="newsletter" class="p-10 xl:p-20 max-w-full xl:max-w-400 mx-auto">
-      <div class="p-20 max-w-full xl:max-w-400 mx-auto bg-[url(/images/yoga3.jpg)] bg-center bg-cover bg-no-repeat text-primary-50 rounded-3xl text-center flex flex-col items-center justify-center">
+    <section id="newsletter" class="p-10 xl:p-20">
+      <div class="p-20 max-w-full mx-auto bg-[url(/images/yoga3.jpg)] bg-center bg-cover bg-no-repeat text-primary-50 rounded-3xl text-center flex flex-col items-center justify-center">
         <p class="text-primary-500 font-medium">Get updated</p>
-        <h3 class="max-w-lg font-semibold text-4xl/[44px] mt-2">Subscribe to our newsletter & get the latest news</h3>
+        <h3 class="max-w-lg font-semibold text-5xl mt-2">Subscribe to our newsletter & get the latest news</h3>
 
         <div class="flex items-center justify-center mt-10 border border-primary-600 focus-within:outline focus-within:outline-primary-600 text-sm rounded-full h-14 max-w-md w-full">
           <input type="text" class="bg-transparent outline-none rounded-full px-4 h-full flex-1" placeholder="Enter your email address">
