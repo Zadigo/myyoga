@@ -7,14 +7,18 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "test:unit": "vitest --project unit",
+    "test:nuxt": "vitest --project nuxt",
+    "test:e2e": "npx playwright test",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@nuxt/eslint": "1.11.0",
     "@nuxt/hints": "1.0.0-alpha.3",
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.0",
-    "@nuxt/test-utils": "3.20.1",
     "@nuxt/ui": "4.2.1",
     "@nuxtjs/i18n": "10.2.1",
     "@tailwindcss/vite": "^4.1.17",
@@ -34,6 +38,12 @@
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.78",
-    "tailwindcss": "^4.1.17"
+    "@nuxt/test-utils": "3.20.1",
+    "@vitest/ui": "4.0.15",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.0.11",
+    "playwright-core": "^1.57.0",
+    "tailwindcss": "^4.1.17",
+    "vitest": "^4.0.15"
   }
 }

@@ -1,6 +1,6 @@
-# Nuxt Minimal Starter
+# My Yoga
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+My Yoga is a Nuxt 3 website template designed Yoga and wellness businesses looking for a clean and modern online presence. It features a responsive design, easy navigation, and sections for showcasing services, classes, instructors, and contact information.
 
 ## Setup
 

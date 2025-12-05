@@ -1,0 +1,17 @@
+volumes:
+  n8nData: {}
+
+networks:
+  myyoga_network:
+    driver: bridge
+
+services:
+  myyoga:
+    build: ./frontend
+    container_name: app_myyoga
+    env_file:
+      - ./docker/environment/nuxt.env
+    ports:
+      - 3000:3000
+    networks:
+      - myyoga_network

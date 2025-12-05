@@ -1,0 +1,31 @@
+volumes:
+  RedisData:
+
+networks:
+  ineiah_network:
+    driver: bridge
+  myprosite_network:
+    external: true
+    name: myprosite_myprosite_network  
+
+services:
+  ineiah:
+    build: ./frontend
+    container_name: app_ineiah
+    env_file:
+      - ./docker/environment/vite.env
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ineiah.entrypoints=websecure
+      - traefik.http.routers.ineiah.rule=Host(`client.gency313.fr`)
+      - traefik.http.routers.ineiah.tls=true
+      - traefik.http.routers.ineiah.tls.certresolver=production
+      - traefik.http.services.ineiah-service.loadbalancer.server.port=3000
+      - traefik.http.routers.ineiah.middlewares=https-redirect
+      - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+    ports:
+      - 3000:3000
+    networks:
+      - ineiah_network
+      - myprosite_network
