@@ -15,7 +15,7 @@
 
           <p class="leading-7">Yoga Alliance partners with studios and schools to expand access to yoga worldwide. Build credibility, access valuable resources, and strengthen your impact with the support of our global network.</p>
 
-          <nuxt-button class="mt-8" size="xl" round>
+          <nuxt-button id="cta-intermediate-1" to="/" class="mt-8" size="xl" round>
             <icon name="i-lucide:external-link" />
             Learn more
           </nuxt-button>
@@ -25,9 +25,9 @@
 
     <!-- Section 1 -->
     <section id="intermediate-2" class="p-10 xl:p-20 max-w-full text-center xl:max-w-400 mx-auto text-primary-900 dark:text-primary-50">
-      <h1 class="text-5xl font-bold mb-5">
+      <h2 class="text-5xl font-bold mb-5">
         Why Yoga? Why Now?
-      </h1>
+      </h2>
 
       <p class="max-w-lg mx-auto leading-7">Yoga is more than a physical practice—it’s a pathway to well-being for individuals and communities alike:</p>
 
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <nuxt-button size="xl">
+      <nuxt-button id="cta-intermediate-2" to="/" size="xl">
         <icon name="i-lucide:external-link" />
         Learn more
       </nuxt-button>
@@ -73,7 +73,7 @@
             <p class="leaning-7">We lead with integrity, kindness, and bold action to get closer to our vision: More Yoga, Better World.</p>
           </div>
 
-          <nuxt-button size="xl">
+          <nuxt-button id="cta-intermediate-3" to="/" size="xl">
             <icon name="i-lucide:external-link" />
             Learn more
           </nuxt-button>
@@ -100,7 +100,7 @@
           By supporting this work, you help ensure that yoga reaches more communities as a tool for well-being, resilience, and connection.
         </p>
 
-        <nuxt-button size="xl" class="mt-10">
+        <nuxt-button id="cta-intermediate-4" to="/" size="xl" class="mt-10">
           <icon name="i-lucide:external-link" />
           Learn more
         </nuxt-button>
@@ -115,7 +115,7 @@
 
         <div class="flex items-center justify-center mt-10 border border-primary-600 focus-within:outline focus-within:outline-primary-600 text-sm rounded-full h-14 max-w-md w-full">
           <input type="text" class="bg-transparent outline-none rounded-full px-4 h-full flex-1" placeholder="Enter your email address">
-          <button class="bg-primary-600 text-primary-50 rounded-full h-11 mr-1 px-8 flex items-center justify-center">
+          <button id="newsletter-1" class="bg-primary-600 text-primary-50 rounded-full h-11 mr-1 px-8 flex items-center justify-center">
             Subscribe now
           </button>
         </div>
