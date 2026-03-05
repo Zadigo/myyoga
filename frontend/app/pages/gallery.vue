@@ -25,3 +25,13 @@
     </div>
   </base-section-container>
 </template>
+
+<script setup lang="ts">
+/**
+ * General
+ */
+
+definePageMeta({
+  label: 'Gallery'
+})
+</script>

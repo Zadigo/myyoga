@@ -107,6 +107,18 @@
 <script setup lang="ts">
 import type { AccordionItem } from '@nuxt/ui'
 
+/**
+ * General
+ */
+
+definePageMeta({
+  label: 'What is Yoga'
+})
+
+/**
+ * Pricing
+ */
+
 const pricingDetails = [
   {
     title: 'Basic Plan',
@@ -145,6 +157,10 @@ const pricingDetails = [
     color: 'bg-primary-100 dark:bg-primary-800'
   }
 ]
+
+/**
+ * Accordion
+ */
 
 const accordionItems = ref<AccordionItem[]>([
   {

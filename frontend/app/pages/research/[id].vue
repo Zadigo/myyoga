@@ -31,6 +31,14 @@
 <script setup lang="ts">
 import type { ResearchPaper } from '~~/types'
 
+/**
+ * General
+ */
+
+definePageMeta({
+  label: 'Research Paper'
+})
+
 const route = useRoute()
 
 const response = await $fetch<ResearchPaper[]>(`/api/research/${route.params.id}`)

@@ -32,3 +32,13 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+/**
+ * General
+ */
+
+definePageMeta({
+  label: 'Booking'
+})
+</script>

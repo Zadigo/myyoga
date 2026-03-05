@@ -127,3 +127,14 @@
     </section>
   </div>
 </template>
+
+<script setup lang="ts">
+/**
+ * General
+ */
+
+definePageMeta({
+  label: 'Home'
+})
+
+</script>
