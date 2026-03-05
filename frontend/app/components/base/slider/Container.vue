@@ -15,15 +15,47 @@
     </div>
 
     <div class="max-w-400 overflow-hidden">
-      <div id="pricing" class="flex space-x-5 overflow-x-scroll p-5">
+      <div id="scrollable-content" ref="scrollableEl" class="flex space-x-5 overflow-x-scroll p-5">
         <slot />
       </div>
     </div>
   </div>
 </template>
 
+<script setup lang="ts">
+const { autoScroll = true } = defineProps<{
+  autoScroll?: boolean
+}>()
+
+if (import.meta.client && autoScroll) {
+  const scrollableEl = useTemplateRef('scrollableEl')
+
+  const { x, arrivedState } = useScroll(scrollableEl, {
+    behavior: 'smooth'
+  })
+
+  const { counter, reset } = useInterval(5000, {
+    controls: true,
+  })
+
+  watch(counter, (newValue) => {
+    if (newValue > 100) {
+      reset()
+      return
+    }
+
+    if (arrivedState.right) {
+      x.value = 0
+      return
+    }
+
+    x.value += 1000
+  })
+ }
+</script>
+
 <style scoped>
-#pricing::-webkit-scrollbar {
+#scrollable-content::-webkit-scrollbar {
   display: none;
 }
 </style>

@@ -67,8 +67,11 @@
       </div>
     </div>
 
+    <!-- Quote -->
+    <base-quote />
+
     <!-- Pricing -->
-    <base-slider-container>
+    <base-slider-container :auto-scroll="false">
       <template #subtitle>
         Creating Your Practice
       </template>
@@ -82,6 +85,23 @@
       </template>
 
       <base-slider-price-card v-for="item in pricingDetails" :key="item.title" :item="item" />
+    </base-slider-container>
+
+    <!-- Info -->
+    <base-slider-container>
+      <template #subtitle>
+        Creating Your Practice
+      </template>
+
+      <template #title>
+        Creating Your Practice
+      </template>
+
+      <template #description>
+        At Yoga Alliance, we embrace a wide variety of approaches to yoga. Our directories recognize the following descriptions to categorize the different types of yoga when you are searching for a teacher or a school.
+      </template>
+
+      <base-slider-info-card v-for="item in infoDetails" :key="item.title" :item="item" class="text-primary-50" />
     </base-slider-container>
   </div>
 </template>
@@ -137,6 +157,73 @@ const pricingDetails = [
     features: ['Unlimited Projects', '1 TB Storage', '24/7 Dedicated Support', 'Custom Integrations', 'SLA Guarantee'],
     buttonText: 'Contact Sales',
     color: 'bg-primary-100 dark:bg-primary-800'
+  }
+]
+
+/**
+ * Info
+ */
+
+const infoDetails = [
+  {
+    title: 'Basic Plan',
+    description: 'Ideal for individuals starting their yoga journey, offering essential features to explore and practice yoga at your own pace.',
+    buttonText: 'Get Started',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Pro Plan',
+    description: 'Designed for dedicated practitioners seeking advanced features, personalized guidance, and enhanced support to deepen their yoga practice.',
+    buttonText: 'Upgrade Now',
+    color: 'bg-brand-100 dark:bg-brand-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-brand-400 dark:bg-brand-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
+  },
+  {
+    title: 'Enterprise Plan',
+    description: 'Tailored for organizations and studios, providing comprehensive tools, custom solutions, and dedicated support to foster a thriving yoga community.',
+    buttonText: 'Contact Sales',
+    color: 'bg-primary-200 dark:bg-primary-800'
   }
 ]
 
