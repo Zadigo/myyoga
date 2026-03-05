@@ -10,7 +10,9 @@
 
         <div class="px-10 py-10 xl:py-0 xl:px-20 text-primary-50">
           <client-only>
-            <motion is="h2" preset="slideVisibleTop" :delay="500" class="text-4xl font-bold mb-10">For Studios and Schools</motion>
+            <motion is="h2" preset="slideVisibleOnceTop" :delay="500" class="text-4xl font-bold mb-10">
+              For Studios and Schools
+            </motion>
           </client-only>
 
           <p class="leading-7">Yoga Alliance partners with studios and schools to expand access to yoga worldwide. Build credibility, access valuable resources, and strengthen your impact with the support of our global network.</p>
@@ -64,7 +66,9 @@
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div class="flex-col content-center space-y-10">
           <client-only>
-            <motion tag="h2" preset="slideVisibleTop" :delay="200" class="text-5xl font-bold mb-5">Your Partner in Yoga</motion>
+            <motion tag="h2" preset="slideVisibleOnceTop" :delay="200" class="text-5xl font-bold mb-5">
+              Your Partner in Yoga
+            </motion>
           </client-only>
 
           <div class="space-y-4">
@@ -80,7 +84,7 @@
         </div>
 
         <client-only>
-          <nuxt-img v-motion-slide-visible-right :delay="300" src="/images/yoga3.jpg" class="h-full w-full rounded-3xl" alt="" />
+          <nuxt-img v-motion-slide-visible-once-right :delay="300" src="/images/yoga3.jpg" class="h-full w-full rounded-3xl" alt="" />
         </client-only>
       </div>
     </section>
@@ -88,7 +92,7 @@
     <!-- Section 3 -->
     <section id="intermediate-4" class="p-10 xl:p-20">
       <div class="p-20 max-w-full xl:max-w-400 mx-auto bg-primary-900 text-primary-50 rounded-3xl text-left">
-        <motion tag="h2" preset="slideVisibleTop" :delay="200" class="text-5xl font-bold mb-5">
+        <motion tag="h2" preset="slideVisibleOnceTop" :delay="200" class="text-5xl font-bold mb-5">
           Expanding Yoga’s Reach, Together
         </motion>
 
