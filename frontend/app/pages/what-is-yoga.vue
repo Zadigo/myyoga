@@ -22,17 +22,7 @@
     </div>
 
     <!-- Overview -->
-    <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-primary-100 dark:bg-primary-800 mx-auto space-y-5">
-      <p>Overview</p>
-
-      <h2 class="text-3xl xl:text-7xl font-bold">
-        Whether you’re new to yoga or looking to deepen your understanding, <span class="text-primary-300">you’re in the right place.</span>
-      </h2>
-
-      <p class="text-md xl:text-4xl font-thin">
-        Yoga is more than an individual practice—it’s a path to connection, shared knowledge, community care, and global well-being.
-      </p>
-    </div>
+    <base-overview />
 
     <!-- Research -->
     <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-brand-100 dark:bg-brand-800 mx-auto space-y-5 overflow-hidden">
@@ -103,6 +93,8 @@
 
       <base-slider-info-card v-for="item in infoDetails" :key="item.title" :item="item" class="text-primary-50" />
     </base-slider-container>
+
+    <bottom-cta />
   </div>
 </template>
 
