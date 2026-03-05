@@ -15,5 +15,9 @@
             "(?:'|\"|`)([^']*)(?:'|\"|`)"
         ]
     ],
-    "tailwind-fold.autoFold": false
+    "tailwind-fold.autoFold": false,
+    "oxc.typeAware": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.oxc": "never"
+    }
 }

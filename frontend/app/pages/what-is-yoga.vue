@@ -68,39 +68,21 @@
     </div>
 
     <!-- Pricing -->
-    <div class="p-10 rounded-3xl mx-auto space-y-5">
-      <div class="text-center space-y-2">
-        <p class="font-bold">Creating Your Practice</p>
-        <h2 class="text-4xl font-bold">Finding Your Practice</h2>
-        <p class="max-w-4xl mx-auto">At Yoga Alliance, we embrace a wide variety of approaches to yoga. Our directories recognize the following descriptions to categorize the different types of yoga when you are searching for a teacher or a school.</p>
-      </div>
+    <base-slider-container>
+      <template #subtitle>
+        Creating Your Practice
+      </template>
 
-      <div class="max-w-400 overflow-hidden">
-        <div id="pricing" class="flex space-x-5 overflow-x-scroll p-5">
-          <div v-for="item in pricingDetails" id="price" :key="item.title" :class="`${item.color} min-w-80 rounded-3xl p-10 flex-col justify-between`">
-            <span class="font-bold">
-              {{ item.title }}
-            </span>
+      <template #title>
+        Creating Your Practice
+      </template>
 
-            <h4 class="font-bold text-5xl">
-              ${{ item.price }}<span class="text-sm">/mo</span>
-            </h4>
+      <template #description>
+        At Yoga Alliance, we embrace a wide variety of approaches to yoga. Our directories recognize the following descriptions to categorize the different types of yoga when you are searching for a teacher or a school.
+      </template>
 
-            <hr class="my-10 text-primary-50">
-
-            <ul class="leading-7">
-              <li v-for="(feature, idx) in item.features" :key="idx">
-                {{ feature }}
-              </li>
-            </ul>
-
-            <nuxt-button class="mt-15" block>
-              {{ item.buttonText }}
-            </nuxt-button>
-          </div>
-        </div>
-      </div>
-    </div>
+      <base-slider-price-card v-for="item in pricingDetails" :key="item.title" :item="item" />
+    </base-slider-container>
   </div>
 </template>
 

@@ -1,9 +1,16 @@
 <template>
-  <section id="site">
+  <section id="site" class="relative">
     <!-- Navbar -->
     <base-navbar />
+    
     <!-- Main -->
-    <slot />
+    <main>
+      <slot />
+    </main>
+
+    <!-- Chat -->
+    <base-chat class="fixed bottom-0 right-0" />
+
     <!-- Footer -->
     <base-footer />
   </section>
