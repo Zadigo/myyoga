@@ -5,9 +5,11 @@
     </slot>
 
     <div class="space-y-10">
-      <h2 class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">
-        {{ title }}
-      </h2>
+      <client-only>
+        <h2 v-motion-slide-bottom :delay="100" class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">
+          {{ title }}
+        </h2>
+      </client-only>
       
       <p class="leading-7">
         {{ description }}

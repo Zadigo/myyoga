@@ -13,8 +13,10 @@
     <!-- More -->
     <div class="absolute bottom-5 xl:bottom-20 left-0 w-full z-20 text-center px-10 xl:px-30">
       <p class="font-bold text-2xl xl:text-4xl mb-5">Where Are You on Your Yoga Journey?</p>
+      
+      <!-- CTA -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-5 xl:gap-10">
-        <nuxt-link v-for="(action, idx) in actions" :id="`cta-${idx}`" :key="idx" to="/what-is-yoga" class="block">
+        <nuxt-link v-for="(action, idx) in actions" :id="`cta-${idx}`" :key="idx" :to="action.link" class="block">
           <div class="relative group p-5 xl:p-8 rounded-xl bg-primary-100/70 backdrop-blur-lg backdrop-saturate-150 cursor-pointer transition-all ease-in-out hover:-translate-y-2 text-center">
             <p class="text-sm xl:text-lg text-light">{{ action.title }}</p>
             <p class="text-xl md:text-lg xl:text-3xl font-bold">{{ action.subtitle }}</p>
@@ -53,12 +55,12 @@ const actions = [
   {
     title: "I want to deepen my practice",
     subtitle: "Explore techniques",
-    link: "/advanced-yoga"
+    link: "/what-is-yoga"
   },
   {
     title: "I want to teach Yoga",
     subtitle: "Start your teaching journey",
-    link: "/become-a-teacher"
+    link: "/what-is-yoga"
   }
 ]
 </script>

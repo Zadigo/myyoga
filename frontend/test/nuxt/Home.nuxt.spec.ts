@@ -1,7 +1,7 @@
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 import Home from '../../app/pages/index.vue'
-import BaseHero from '../../app/components/BaseHero.vue'
+import BaseHero from '../../app/components/base/Hero.vue'
 
 describe('Home Page', () => {
   it('renders properly', async () => {

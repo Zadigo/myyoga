@@ -1,6 +1,6 @@
 import { mountSuspended } from "@nuxt/test-utils/runtime"
 import { describe, expect, it } from "vitest"
-import BaseHero from "../../app/components/BaseHero.vue"
+import BaseHero from "../../app/components/base/Hero.vue"
 
 describe('Hero Component', () => {
   it ('should have the expected structure', async () => {

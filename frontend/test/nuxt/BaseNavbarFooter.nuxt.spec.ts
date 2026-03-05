@@ -1,7 +1,7 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
-import BaseFooter from '../../app/components/BaseFooter.vue'
-import BaseNavbar from '../../app/components/BaseNavbar.vue'
+import BaseFooter from '../../app/components/base/Footer.vue'
+import BaseNavbar from '../../app/components/base/Navbar.vue'
 
 
 describe('Navbar', () => {
