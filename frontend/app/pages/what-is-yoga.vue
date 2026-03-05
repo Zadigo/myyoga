@@ -1,5 +1,5 @@
 <template>
-  <div id="what-is-yoga" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)] overflow-hidden">
+  <div id="what-is-yoga" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(var(--navbar-height)+1rem)] overflow-hidden">
     <!-- Header -->
     <div>
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
@@ -35,27 +35,29 @@
     </div>
 
     <!-- Research -->
-    <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-brand-100 dark:bg-brand-800 mx-auto space-y-5">
-      <div class="grid grid-cols-2">
+    <div class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-brand-100 dark:bg-brand-800 mx-auto space-y-5 overflow-hidden">
+      <div class="grid grid-cols-1 xl:grid-cols-2">
         <div class="space-y-4 w-130 text-left">
           <h2 class="text-4xl font-bold mb-5">Exploring Yoga’s Benefits Through Research</h2>
           <p class="leading-7">We aggregate research that explores yoga’s profound effects and empowers teachers, schools, and practitioners with evidence-based knowledge.</p>
           <p class="leading-7">Check out the resources below to learn more about yoga’s impact on specific areas of mental, physical, and collective health.</p>
         </div>
 
-        <div>
+        <div class="">
           <nuxt-accordion :items="accordionItems">
             <template #default="{ item }">
-              <h4 class="text-4xl">
-                {{ item.label }}
-              </h4>
-
-              <p class="mt-5 w-150">Explore how yoga supports mental well-being by cultivating mindfulness, easing stress, and enhancing emotional resilience.</p>
+              <div class="max-w-100 xl:max-w-full overflow-hidden">
+                <h4 class="text-4xl">
+                  {{ item.label }}
+                </h4>
+  
+                <p class="mt-5 max-w-150 md:max-w-full">Explore how yoga supports mental well-being by cultivating mindfulness, easing stress, and enhancing emotional resilience.</p>
+              </div>
             </template>
 
             <template #content="{ item }">
               <div class="grid grid-cols-3 gap-2 py-10">
-                <nuxt-link v-for="benefit in item.benefits" :key="benefit" :to="`/research/${item.category}`" class="block p-3 bg-brand-100 dark:bg-brand-700 rounded-lg hover:bg-brand-200 dark:hover:bg-brand-600 text-center">
+                <nuxt-link v-for="benefit in item.benefits" :key="benefit" :to="`/research/${item.category}`" class="block p-3 bg-brand-200 dark:bg-brand-700 rounded-lg hover:bg-brand-200 dark:hover:bg-brand-600 text-center">
                   {{ benefit }}
                 </nuxt-link>
               </div>

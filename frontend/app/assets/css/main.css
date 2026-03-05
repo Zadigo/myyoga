@@ -6,6 +6,7 @@
     --font-title: 'Zilla Slab', serif;
     --font-sans: 'Nunito Sans', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+    --navbar-height: 70px;
 }
 
 @theme static {
