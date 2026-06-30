@@ -9,6 +9,7 @@ services:
   n8n:
     image: n8nio/n8n
     container_name: app_n8n
+    restart: unless-stopped
     labels:
       - traefik.enable=true
       - traefik.http.routers.n8n.entrypoints=websecure
@@ -22,6 +23,19 @@ services:
       - traefik.http.middlewares.n8n-headers.headers.customrequestheaders.X-Forwarded-Proto=https
       - traefik.http.routers.n8n.middlewares=n8n-headers@docker
     env_file:
-      - ./docker/infrastructure/docker/env/automation.env
+      - ./infrastructure/docker/env/automation.env
+    ports:
+      - "5678:5678"
+    depends_on:
+      - redis
+    volumes:
+      - n8nData:/home/node/.n8n
+    networks:
+      - yoganetwork
+
+  redis:
+    image: redis:alpine
+    container_name: app_redis
+    restart: unless-stopped
     networks:
       - yoganetwork
