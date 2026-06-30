@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import Booking from '../../app/pages/booking.vue'
 
 describe('Booking page', () => {
-  it('should load the booking page', async () => {
+  it('should render the page correctly', async () => {
     const component = await mountSuspended(Booking)
 
     // Has page title
@@ -23,7 +23,7 @@ describe('Booking page', () => {
       const placeholder = input.attributes('placeholder')
       expect(placeholder).toBeDefined()
       expect(placeholder?.toLowerCase()).toContain(selector.match(/name="(\w+)"/)?.[1] || '')
-
+      
       // Is empty by default
       expect((input.element as HTMLInputElement).value).toBe('')
 
@@ -32,11 +32,29 @@ describe('Booking page', () => {
       expect((input.element as HTMLInputElement).value).toBe('TestValue')
     })
 
+  })
+  
+  it('should have submit button and be able to click it', async () => {
+    const component = await mountSuspended(Booking)
+
+    const form = component.get('form#booking-form')
+
     // Has submit button
     const submitButton = form.get('button#cta-book-meeting')
     expect(submitButton).toBeDefined()
     expect(submitButton.attributes('disabled')).toBeUndefined()
-
+  
     await submitButton.trigger('click')
+  })
+
+  it('all images should have alt text', async () => {
+    const component = await mountSuspended(Booking)
+
+    const images = component.findAll('img')
+    images.forEach((img) => {
+      const alt = img.attributes('alt')
+      expect(alt).toBeDefined()
+      expect(alt?.trim()).not.toBe('')
+    })
   })
 })

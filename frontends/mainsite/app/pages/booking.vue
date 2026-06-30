@@ -2,7 +2,7 @@
   <div id="pricing" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)]">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-400 mx-auto">
       <div class="hidden lg:block bg-primary-100 rounded-3xl overflow-hidden">
-        <nuxt-img src="/images/yoga3.jpg" class="w-full" />
+        <nuxt-img src="/images/yoga3.jpg" class="w-full" alt="Some value" />
       </div>
 
       <div class="bg-primary-100 dark:bg-primary-800 p-10 xl:p-20 rounded-3xl space-y-5">

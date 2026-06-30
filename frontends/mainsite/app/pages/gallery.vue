@@ -8,7 +8,7 @@
       <client-only>
         <motion-group preset="pop">
           <div v-for="i in 30" :key="i" class="overflow-hidden rounded-3xl relative">
-            <nuxt-img src="/images/yoga2.jpg" class="aspect-square object-cover hover:scale-110 transition duration-300" width="100%" height="100%" alt="" />
+            <nuxt-img src="/images/yoga2.jpg" class="aspect-square object-cover hover:scale-110 transition duration-300" width="100%" height="100%" alt="Some value" />
             
             <div class="text-primary-50 absolute bottom-10 left-10">
               <h2 class="font-bold text-2xl">
