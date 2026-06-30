@@ -2,6 +2,7 @@
   "name": "@myyoga/project",
   "private": true,
   "scripts": {
+    "dev": "pnpm -r dev",
     "add:mainsite": "pnpm --filter mainsite add",
     "dev:mainsite": "pnpm --filter mainsite dev",
     "install:mainsite": "pnpm --filter mainsite install",

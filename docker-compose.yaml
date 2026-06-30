@@ -2,16 +2,26 @@ volumes:
   n8nData: {}
 
 networks:
-  myyoga_network:
+  yoganetwork:
     driver: bridge
 
 services:
-  myyoga:
-    build: ./frontend
-    container_name: app_myyoga
+  n8n:
+    image: n8nio/n8n
+    container_name: app_n8n
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.n8n.entrypoints=websecure
+      - traefik.http.routers.n8n.rule=Host(`n8n.example.fr`)
+      - traefik.http.routers.n8n.tls=true
+      - traefik.http.routers.n8n.tls.certresolver=production
+      - traefik.http.services.n8n-service.loadbalancer.server.port=5678
+      - traefik.http.middlewares.n8n.headers.browserXSSFilter=true
+      - traefik.http.middlewares.n8n.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.n8n-headers.headers.customrequestheaders.Origin=https://n8n.example.fr
+      - traefik.http.middlewares.n8n-headers.headers.customrequestheaders.X-Forwarded-Proto=https
+      - traefik.http.routers.n8n.middlewares=n8n-headers@docker
     env_file:
-      - ./docker/environment/nuxt.env
-    ports:
-      - 3000:3000
+      - ./docker/infrastructure/docker/env/automation.env
     networks:
-      - myyoga_network
+      - yoganetwork
