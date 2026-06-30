@@ -59,7 +59,7 @@ const actions = [
   },
   {
     title: "I want to teach Yoga",
-    subtitle: "Start your teaching journey",
+    subtitle: "Your teaching journey",
     link: "/what-is-yoga"
   }
 ]

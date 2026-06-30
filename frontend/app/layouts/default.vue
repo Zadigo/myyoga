@@ -9,7 +9,7 @@
     </main>
 
     <!-- Chat -->
-    <base-chat class="fixed bottom-0 right-0" />
+    <!-- <base-chat class="fixed bottom-0 right-0" /> -->
 
     <!-- Footer -->
     <base-footer />
