@@ -14,6 +14,7 @@
     "test:nuxt": "vitest --project nuxt",
     "test:e2e": "npx playwright test",
     "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch --coverage",
     "lint:ox": "oxlint",
     "lint:ox-fix": "oxlint --fix",
     "lint:ox-init": "oxlint --init"
@@ -33,6 +34,7 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.5.0",
     "@iconify-json/lucide": "^1.2.115",
     "@nuxt/eslint": "1.16.0",
     "@nuxt/image": "2.0.0",
@@ -42,6 +44,7 @@
     "@tailwindcss/vite": "^4.3.2",
     "@testing-library/vue": "^8.1.0",
     "@types/node": "^26.0.1",
+    "@vitest/coverage-v8": "^4.1.9",
     "@vitest/ui": "4.1.9",
     "@vue/test-utils": "^2.4.11",
     "@vueuse/nuxt": "14.3.0",
