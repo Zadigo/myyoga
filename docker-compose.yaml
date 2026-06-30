@@ -39,3 +39,17 @@ services:
     restart: unless-stopped
     networks:
       - yoganetwork
+
+  pdfapi:
+    build: services/pdfapi
+    container_name: app_pdfapi
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.pdfapi.entrypoints=websecure
+      - traefik.http.routers.pdfapi.rule=Host(`pdfapi.example.fr`)
+      - traefik.http.routers.pdfapi.tls=true
+      - traefik.http.routers.pdfapi.tls.certresolver=production
+      - traefik.http.services.pdfapi-service.loadbalancer.server.port=3000
+    networks:
+      - yoganetwork
