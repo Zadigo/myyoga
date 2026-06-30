@@ -19,5 +19,12 @@
     "oxc.typeAware": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.oxc": "never"
-    }
+    },
+    "python-envs.pythonProjects": [
+        {
+            "path": "services/pdfapi",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
 }
