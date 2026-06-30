@@ -94,7 +94,7 @@
       <base-slider-info-card v-for="item in infoDetails" :key="item.title" :item="item" class="text-primary-50" />
     </base-slider-container>
 
-    <bottom-cta />
+    <base-bottom-cta />
   </div>
 </template>
 

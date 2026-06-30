@@ -6,7 +6,7 @@
     <!-- Intermediate -->
     <section id="intermediate-1" class="p-10 xl:p-20 max-w-full xl:max-w-400 mx-auto">
       <div class="rounded-3xl grid grid-cols-1 xl:grid-cols-2 overflow-hidden bg-primary-800 flex-col place-items-center">
-        <nuxt-img src="/images/yoga3.jpg" class="h-full w-full" alt="" />
+        <nuxt-img src="/images/yoga3.jpg" class="h-full w-full" alt="Yoga practice in a studio" />
 
         <div class="px-10 py-10 xl:py-0 xl:px-20 text-primary-50">
           <client-only>
@@ -35,19 +35,19 @@
 
       <div class="grid grid-cols-1 xl:grid-cols-3">
         <div class="p-10 flex-col place-items-center">
-          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="" />
+          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="Person practicing yoga for physical health" />
           <h2 class="text-3xl font-bold mb-5">Physical Health</h2>
           <p class="leading-7">Regular yoga practice improves flexibility, strength, and cardiovascular health, promoting overall physical well-being.</p>
         </div>
 
         <div class="p-10 flex-col place-items-center">
-          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="" />
+          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="Person practicing yoga for mental clarity" />
           <h2 class="text-3xl font-bold mb-5">Mental Clarity</h2>
           <p class="leading-7">Yoga helps reduce stress and anxiety, fostering mental clarity and emotional balance through mindfulness and meditation.</p>
         </div>
 
         <div class="p-10 flex-col place-items-center">
-          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="" />
+          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="People practicing yoga in a community setting" />
           <h2 class="text-3xl font-bold mb-5">Community Connection</h2>
           <p class="leading-7">Yoga brings people together, creating supportive communities that encourage personal growth and social connection.</p>
         </div>
@@ -84,7 +84,7 @@
         </div>
 
         <client-only>
-          <nuxt-img v-motion-slide-visible-once-right :delay="300" src="/images/yoga3.jpg" class="h-full w-full rounded-3xl" alt="" />
+          <nuxt-img v-motion-slide-visible-once-right :delay="300" src="/images/yoga3.jpg" class="h-full w-full rounded-3xl" alt="People practicing yoga in a community setting" />
         </client-only>
       </div>
     </section>
