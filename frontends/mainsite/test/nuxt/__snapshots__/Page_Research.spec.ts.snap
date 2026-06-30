@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Page: Research > should render the page correctly 1`] = `
+"<div id="research" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)] overflow-hidden">
+  <!-- Header -->
+  <header class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-primary-100 dark:bg-primary-800 mx-auto space-y-5 text-center flex-col place-items-center">
+    <h1 class="text-7xl text-primary-50 capitalize"></h1>
+    <p class="leading-7 w-150">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero natus ab perspiciatis iusto repellendus. Quia aspernatur minima alias consectetur laborum exercitationem pariatur, rem culpa. A, ratione! Nobis nesciunt doloribus consequatur.</p>
+  </header><!-- Content -->
+  <section class="max-w-full xl:max-w-400 mx-auto">
+    <div class="rounded-3xl bg-primary-50 dark:bg-primary-800 p-10 xl:p-30 xl:py-40 mx-auto space-y-5">
+      <h3 class="font-bold text-3xl mb-10"> Research Paper Details </h3>
+      <div class="space-y-5"></div>
+    </div>
+  </section>
+</div>"
+`;

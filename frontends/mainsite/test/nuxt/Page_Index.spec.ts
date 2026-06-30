@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import Index from '../../app/pages/index.vue'
 import Hero from '../../app/components/base/Hero.vue'
 
-describe.only('Index Page', () => {
+describe('Index Page', () => {
   it('should render the page correctly', async () => {
     const wrapper = await mountSuspended(Index)
 

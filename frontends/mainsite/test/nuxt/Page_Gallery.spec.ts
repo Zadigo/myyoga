@@ -4,7 +4,7 @@ import Gallery from '../../app/pages/gallery.vue'
 import SimpleHeader from '../../app/components/base/SimpleHeader.vue'
 
 
-describe.only('Gallery Page', () => {
+describe('Gallery Page', () => {
   it('should render the page correctly', async () => {
     const wrapper = await mountSuspended(Gallery)
 

@@ -1,6 +1,5 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
-import BaseFooter from '../../app/components/base/Footer.vue'
 import BaseNavbar from '../../app/components/base/Navbar.vue'
 
 
@@ -20,7 +19,7 @@ describe('Navbar', () => {
     await ctaButton.trigger('click')
   })
 
-  it.skip('should be transparent on initial render', async () => {
+  it.todo('should be transparent on initial render', async () => {
     const component = await mountSuspended(BaseNavbar)
     // Check if the navbar has transparent background on initial render
     console.log(component.classes())
@@ -36,20 +35,5 @@ describe('Navbar', () => {
     // Check if the navbar background has changed after scroll
     expect(component.classes()).not.toContain('bg-transparent')
     expect(component.classes()).toContain('bg-primary-50')
-  })
-})
-
-
-describe('Footer', () => {
-  it.skip('should render the footer component', async () => {
-    const component = await mountSuspended(BaseFooter)
-    // Check if the component is rendered
-    expect(component.exists()).toBe(true)
-
-    // Check for presence of key elements in the footer
-    expect(component.get('footer')).toBeDefined()
-    expect(component.get('a[href="/"]')).toBeDefined() // Logo link
-    expect(component.get('a[href="/privacy-policy"]')).toBeDefined() // Privacy Policy link
-    expect(component.get('a[href="/terms-of-service"]')).toBeDefined() // Terms of Service link
   })
 })

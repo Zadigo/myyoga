@@ -5,7 +5,7 @@ import BaseOverview from '../../app/components/base/Overview.vue'
 import BaseBottomCta from '../../app/components/base/BottomCta.vue'
 import BaseSliderPriceCard from '../../app/components/base/slider/PriceCard.vue'
 
-describe.only('Page: WhatIsYoga', () => {
+describe('Page: WhatIsYoga', () => {
   it('should render the page correctly', async () => {
     const wrapper = await mountSuspended(WhatIsYoga)
     expect(wrapper.html()).toMatchSnapshot()
