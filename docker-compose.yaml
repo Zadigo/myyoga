@@ -51,5 +51,9 @@ services:
       - traefik.http.routers.pdfapi.tls=true
       - traefik.http.routers.pdfapi.tls.certresolver=production
       - traefik.http.services.pdfapi-service.loadbalancer.server.port=3000
+    depends_on:
+      - redis
+    env_file:
+      - ./infrastructure/docker/env/fastmcp.env
     networks:
       - yoganetwork

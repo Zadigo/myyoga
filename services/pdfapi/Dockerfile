@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the FastMCP server
-CMD ["uv", "run", "python", "-m", "app"]
+CMD [ "uv", "run", "fastmcp", "run" ]

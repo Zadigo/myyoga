@@ -2,6 +2,7 @@ import json
 import redis
 from models import Resource
 from constants import RESOURCES_DIR
+import os
 
 STORAGE_KEY = 'pdfapi:{name}'
 
@@ -20,7 +21,11 @@ def load_pdfs() -> list[Resource]:
 
 
 def load_redis() -> redis.Redis:
-    instance = redis.Redis(host='localhost', port=6379, db=0)
+    instance = redis.Redis(
+        host=os.getenv('REDIS_HOST', 'localhost'),
+        port=int(os.getenv('REDIS_PORT', 6379)),
+        db=0
+    )
     try:
         instance.ping()
     except redis.exceptions.ConnectionError:

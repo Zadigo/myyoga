@@ -13,6 +13,11 @@ from starlette.responses import JSONResponse
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 from fastmcp.resources import ResourceResult, ResourceContent
+import dotenv
+import os
+
+dotenv.load_dotenv()
+
 
 @lifespan
 async def app_lifespan(app):
@@ -28,15 +33,23 @@ mcp = fastmcp.FastMCP(
 )
 
 # Distributed response cache
-redis_store = RedisStore(host='localhost', port=6379)
-event_store = EventStore(storage=redis_store, max_events_per_stream=100, ttl=3600)
+redis_store = RedisStore(
+    host=os.getenv('REDIS_HOST', 'localhost'),
+    port=int(os.getenv('REDIS_PORT', 6379))
+)
+event_store = EventStore(
+    storage=redis_store,
+    max_events_per_stream=100,
+    ttl=3600
+)
 cache_middleware = ResponseCachingMiddleware(cache_storage=redis_store)
 
 # Middlewares
 middleware = [
     Middleware(
         CORSMiddleware,
-        allow_origins=['*'],  # Allow all origins; use specific origins for security
+        # Allow all origins; use specific origins for security
+        allow_origins=['*'],
         allow_methods=['*'],
         allow_headers=[
             'mcp-protocol-version',
@@ -48,9 +61,11 @@ middleware = [
     )
 ]
 
+
 @mcp.custom_route('/health', methods=["GET"])
 async def health_check(request):
     return JSONResponse({"status": "healthy", "service": "mcp-server"})
+
 
 @mcp.resource("ressource://files/{name}", description="Get the text content of a specific resource by name")
 async def get_resource(ctx: Context, name: str) -> models.ResourceText:
@@ -69,7 +84,7 @@ async def get_resource(ctx: Context, name: str) -> models.ResourceText:
     candidates: list[models.Resource] = []
     for item in load_pdfs():
         logic = [
-            name in item.title.lower(), 
+            name in item.title.lower(),
             name in item.path.lower()
         ]
 
@@ -78,12 +93,13 @@ async def get_resource(ctx: Context, name: str) -> models.ResourceText:
 
     if not candidates:
         raise fastmcp.exceptions.NotFoundError("Resources not found")
-    
-    ctx.info(f"Extracting text from resources: {[candidate.title for candidate in candidates]}")
+
+    ctx.info(
+        f"Extracting text from resources: {[candidate.title for candidate in candidates]}")
 
     text: str = ''
     total_pages: int = 0
-    
+
     for candidate in candidates:
         reader = pypdf.PdfReader(candidate.path)
 
@@ -107,7 +123,8 @@ async def get_resources(ctx: Context) -> list[models.Resource]:
     """
     resources = load_pdfs()
     contents = [
-        ResourceContent(content=item.model_dump(), mime_type='application/json', meta={'title': item.title}) 
+        ResourceContent(content=item.model_dump(),
+                        mime_type='application/json', meta={'title': item.title})
         for item in resources
     ]
     return ResourceResult(contents=contents, meta={'count': len(resources)})
@@ -116,7 +133,7 @@ async def get_resources(ctx: Context) -> list[models.Resource]:
 @mcp.prompt
 async def ask_about_topic(topic: str) -> list[Message]:
     """Ask a question about a specific topic and get an answer.
-    
+
     Args:
         topic (str): The topic to ask about.
 
@@ -124,8 +141,10 @@ async def ask_about_topic(topic: str) -> list[Message]:
         list[Message]: A list of Message objects containing the question and the answer.
     """
     return [
-        Message(f"Can you tell me more about Yoga and in particular about {topic}?"),
+        Message(
+            f"Can you tell me more about Yoga and in particular about {topic}?"),
         Message(f"I will help you with know about {topic}", role="assistant"),
     ]
 
-app = mcp.http_app(middleware=[cache_middleware] + middleware, event_store=event_store)
+app = mcp.http_app(middleware=[cache_middleware] +
+                   middleware, event_store=event_store)
