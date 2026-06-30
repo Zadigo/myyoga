@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@nuxt/hints',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils',
     '@nuxt/ui',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',

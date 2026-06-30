@@ -3,7 +3,12 @@
   "plugins": [
     "typescript",
     "unicorn",
-    "oxc"
+    "oxc",
+    "eslint",
+    "node",
+    "typescript",
+    "import",
+    "vue"
   ],
   "categories": {
     "correctness": "error"
