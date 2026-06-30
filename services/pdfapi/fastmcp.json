@@ -1,0 +1,25 @@
+{
+    "$schema": "https://gofastmcp.com/public/schemas/fastmcp.json/v1.json",
+    "source": {
+        "type": "filesystem",
+        "path": "app.py",
+        "entrypoint": "mcp"
+    },
+    "environment": {
+        "type": "uv",
+        "python": ">=3.14",
+        "dependencies": [
+            "dotenv>=0.9.9",
+            "fastmcp[standard,tasks]>=3.4.2",
+            "httpx>=0.28.1",
+            "py-key-value-aio[redis]>=0.4.5",
+            "pydantic>=2.13.4",
+            "pypdf[crypto]>=6.14.2",
+            "redis>=8.0.1"
+        ]
+    },
+    "deployment": {
+        "transport": "stdio",
+        "log_level": "INFO"
+    }
+}
