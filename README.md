@@ -1,75 +1,15 @@
-# My Yoga
+# Yoga - Nuxt 4 🛍️
 
-My Yoga is a Nuxt 3 website template designed Yoga and wellness businesses looking for a clean and modern online presence. It features a responsive design, easy navigation, and sections for showcasing services, classes, instructors, and contact information.
+Yoga is a modern web application built with Nuxt 4, designed to provide a seamless and interactive user experience for yoga enthusiasts.
 
-## Setup
+This project can be combined with the [e-commerce micro-services solution](https://github.com/Zadigo/mycommerce) to create a fullstack e-commerce platform with payments, reviews, orders etc.
 
-Make sure to install dependencies:
+## Technical Architecture 🏗
 
-```bash
-# npm
-npm install
+Refer to the [technical architecture document](docs/ARCHITECTURE.md) for a detailed overview of the system's design.
 
-# pnpm
-pnpm install
+## Configuring your project 🏠
 
-# yarn
-yarn install
+## References
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [Architecture document](docs/ARCHITECTURE.md)
