@@ -15,7 +15,7 @@ export function useLoadFixtures<T extends ResearchPaper>() {
     const id = getRouterParam(event, 'id')
 
     if (!id) return undefined
-    return fixtures.value.find((item) => item.id.toString() === id)
+    return fixtures.value.find((item) => item.slug.toString() === id)
   }
 
   function raw() {

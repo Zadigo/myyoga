@@ -1,20 +1,22 @@
 [
     {
-      "id": null,
+      "id": "1",
       "category": "Cancer",
       "title": "Yoga has a solid effect on cancer-related fatigue in patients with breast cancer: a meta-analysis.",
       "authors": "Dong B, Xie C, Jing X, Lin L, Tian L.",
       "journal": "Support Care Cancer. 2018 Mar;26(3): 811-820.",
       "link": "https: //pubmed.ncbi.nlm.nih.gov/29049020/",
+      "slug": "cancer",
       "isAbstract": false
     },
     {
-      "id": null,
+      "id": "2",
       "category": "Cancer",
       "title": "Effects of physical and mind-body exercise on sleep problems during and after breast cancer treatment: a systematic review and meta-analysis.",
       "authors": "Kreutz C, Schmidt ME, Steindorf K.",
       "journal": "Breast Cancer Res Treat. 2019 Jan;173(2): 247-261.",
       "link": "https: //pubmed.ncbi.nlm.nih.gov/30448620/",
+      "slug": "cancer",
       "isAbstract": false
     }
 ]

@@ -47,7 +47,7 @@
 
             <template #content="{ item }">
               <div class="grid grid-cols-3 gap-2 py-10">
-                <nuxt-link v-for="benefit in item.benefits" :key="benefit" :to="`/research/${item.category}`" class="block p-3 bg-brand-200 dark:bg-brand-700 rounded-lg hover:bg-brand-200 dark:hover:bg-brand-600 text-center">
+                <nuxt-link v-for="benefit in item.benefits" :key="benefit" :to="`/research/cancer`" class="block p-3 bg-brand-200 dark:bg-brand-700 rounded-lg hover:bg-brand-200 dark:hover:bg-brand-600 text-center">
                   {{ benefit }}
                 </nuxt-link>
               </div>
@@ -228,19 +228,22 @@ const accordionItems = ref<AccordionItem[]>([
     label: 'Mental Benefits',
     content: 'Explore how yoga supports mental well-being by cultivating mindfulness, easing stress, and enhancing emotional resilience.',
     benefits: ['Mindfulness', 'Stress Reduction', 'Emotional Resilience'],
-    category: 'cancer'
+    category: 'cancer',
+    value: 'cancer'
   },
   {
     label: 'Physical Benefits',
     content: 'Choose a primary and a neutral color from your Tailwind CSS theme.',
     benefits: ['Mindfulness', 'Stress Reduction', 'Emotional Resilience'],
-    category: 'cancer'
+    category: 'cancer',
+    value: 'mindfulness'
   },
   {
     label: 'Collective Benefits',
     content: 'You can customize components by using the `class` / `ui` props or in your app.config.ts.',
     benefits: ['Mindfulness', 'Stress Reduction', 'Emotional Resilience'],
-    category: 'cancer'
+    category: 'cancer',
+    value: 'collective'
   }
 ])
 </script>

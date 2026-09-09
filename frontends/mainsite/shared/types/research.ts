@@ -7,5 +7,6 @@ export interface ResearchPaper {
   authors: string
   journal: string
   link: string
+  slug: string
   isAbstract: boolean
 }

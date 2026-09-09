@@ -2,7 +2,7 @@
   <div id="research" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)] overflow-hidden">
     <!-- Header -->
     <header class="p-10 xl:p-30 xl:py-40 rounded-3xl bg-primary-100 dark:bg-primary-800 mx-auto space-y-5 text-center flex-col place-items-center">
-      <h1 class="text-7xl text-primary-50 capitalize">{{ route.params.id }}</h1>
+      <h1 class="text-7xl text-primary-50 capitalize">Cancer</h1>
       <p class="leading-7 w-150">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero natus ab perspiciatis iusto repellendus. Quia aspernatur minima alias consectetur laborum exercitationem pariatur, rem culpa. A, ratione! Nobis nesciunt doloribus consequatur.</p>
     </header>
 
@@ -14,7 +14,7 @@
         </h3>
 
         <div class="space-y-5">
-          <article v-for="item in response" :key="item.title">
+          <article v-for="item in data" :key="item.title">
             <h4 class="font-bold">{{ item.title }}</h4>
             <p>{{ item.authors }}</p>
             <p>{{ item.journal }}</p>
@@ -29,8 +29,6 @@
 </template>
 
 <script setup lang="ts">
-import type { ResearchPaper } from '~~/types'
-
 /**
  * General
  */
@@ -41,5 +39,5 @@ definePageMeta({
 
 const route = useRoute()
 
-const response = await $fetch<ResearchPaper[]>(`/api/research/${route.params.id}`)
+const { data } = await useAsyncData(`research-${route.params.id}`, async () => await $fetch<ResearchPaper[]>(`/api/research/${route.params.id}`), { default: () => [] as ResearchPaper[] })
 </script>
