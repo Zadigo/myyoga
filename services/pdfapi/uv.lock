@@ -1184,7 +1184,7 @@ wheels = [
 
 [[package]]
 name = "pdfapi"
-version = "0.1.0"
+version = "0.2.0.dev1"
 source = { virtual = "." }
 dependencies = [
     { name = "aiofiles" },
@@ -1216,7 +1216,7 @@ dev = [
 requires-dist = [
     { name = "aiofiles", specifier = ">=25.1.0" },
     { name = "dotenv", specifier = ">=0.9.9" },
-    { name = "fastmcp", extras = ["apps", "standard", "tasks"], specifier = ">=3.4.2" },
+    { name = "fastmcp", extras = ["apps", "tasks"], specifier = ">=4.0.3" },
     { name = "httpx2", specifier = ">=2.12.0" },
     { name = "pandas", specifier = ">=3.0.5" },
     { name = "py-key-value-aio", extras = ["redis"], specifier = ">=0.4.5" },
