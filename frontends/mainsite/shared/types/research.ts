@@ -1,7 +1,7 @@
 export type Nullable<T> = T | null
 
 export interface ResearchPaper {
-  id: Nullable<number>
+  id: number
   category: string
   title: string
   authors: string
