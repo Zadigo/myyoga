@@ -6,20 +6,9 @@
 
 *Questions that need to be answered to better understand the requirements and constraints of the system*
 
-- **Channels** Email ? SMS ? Push Notifications ?
-- **User Authentication** Email/Password ? Social Login ?
-- **Email Templates** Predefined ? Customizable ?
-- **Email Scheduling** Immediate ? Scheduled ? Recurring ?
-- **Email Personalization** Dynamic content based on user data ?
-- **Email Tracking** Open rates ? Click-through rates ? Bounce rates ?
-- **Spam protection** How to prevent the system from being used for spamming ? Rate limiting ? Email verification ? Prevent a same lead from receiving multiple emails in a short period of time ?
-- **Sequences** How are the sequences managed for sending emails?
-
 ### Functional Requirements 🟢
 
 *Describes the specific features and functionalities that the system must provide*
-
-- **Mainsite** Main website for the yoga business, including information about classes, instructors, schedules, and pricing.
 
 ## Capacity Planning ⏰
 
@@ -144,12 +133,9 @@ Caching will be almost exlusively done with Redis as an in-memory data store.
 ```mermaid
     flowchart LR
         A[User Requests] --> B(Load Balancer)
-        B --> C[EmailApi]
-        B --> D[EmailApi]
-        B --> E[EmailApi]
-        E --> G[Emiling Server]
-        E --> H[Emiling Server]
-        E --> I[Emiling Server]
+        B --> C[Mainsite]
+        B --> D[Mainsite]
+        B --> E[Mainsite]
 ```
 
 ---
