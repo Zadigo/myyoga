@@ -4,9 +4,9 @@
     <div>
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
         <div class="rounded-3xl overflow-hidden">
-          <client-only>
-            <nuxt-img v-motion-slide-left :delay="500" src="/images/yoga2.jpg" class="aspect-square object-cover" alt="" />
-          </client-only>
+          <motion :preset="VueUseMotions.SlideLeft" :delay="500">
+            <nuxt-img :alt="get('legalName')" src="/images/yoga2.jpg" class="aspect-square object-cover" />
+          </motion>
         </div>
 
         <client-only>
@@ -61,7 +61,7 @@
     <base-quote />
 
     <!-- Pricing -->
-    <base-slider-container :auto-scroll="false">
+    <base-slider-container id="pricing" :auto-scroll="false">
       <template #subtitle>
         Creating Your Practice
       </template>
@@ -246,6 +246,32 @@ const accordionItems = ref<AccordionItem[]>([
     value: 'collective'
   }
 ])
+
+/**
+ * SEO
+ */
+
+const { get } = useBusinessDetails()
+
+const url = useRequestURL()
+
+useSeoMeta({
+  title: `Demo what is Yoga by ${get('name')}`,
+  description: get('description'),
+  author: get('legalName'),
+  twitterDescription: get('description'),
+  twitterCard: 'summary_large_image',
+  ogTitle: `Demo what is Yoga by ${get('name')}`,
+  ogDescription: get('description'),
+  ogUrl: url.href
+})
+
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: `Demo what is Yoga by ${get('name')}`,
+    description: get('description')
+  })
+}
 </script>
 
 <style scoped>

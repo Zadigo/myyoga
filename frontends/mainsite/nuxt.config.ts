@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/test-utils/module',
+    '@nuxtjs/seo',
+    'nuxt-skew-protection',
+    'nuxt-ai-ready'
   ],
 
   app: {
@@ -60,5 +63,18 @@ export default defineNuxtConfig({
       { code: 'fr', language: 'fr-FR' }
     ],
     defaultLocale: 'en',
+  },
+
+  imports: {
+    dirs: [
+      '~/constants'
+    ]
+  },
+
+  runtimeConfig: {
+    public: {
+      siteName: '',
+      siteUrl: ''
+    }
   }
 })

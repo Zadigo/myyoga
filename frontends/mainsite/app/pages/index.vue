@@ -6,7 +6,7 @@
     <!-- Intermediate -->
     <section id="intermediate-1" class="p-10 xl:p-20 max-w-full xl:max-w-400 mx-auto">
       <div class="rounded-3xl grid grid-cols-1 xl:grid-cols-2 overflow-hidden bg-primary-800 flex-col place-items-center">
-        <nuxt-img src="/images/yoga3.jpg" class="h-full w-full" alt="Yoga practice in a studio" />
+        <nuxt-img :alt="get('legalName')" src="/images/yoga3.jpg" class="h-full w-full" />
 
         <div class="px-10 py-10 xl:py-0 xl:px-20 text-primary-50">
           <client-only>
@@ -17,7 +17,7 @@
 
           <p class="leading-7">Yoga Alliance partners with studios and schools to expand access to yoga worldwide. Build credibility, access valuable resources, and strengthen your impact with the support of our global network.</p>
 
-          <nuxt-button id="cta-intermediate-1" to="/" class="mt-8" size="xl" round>
+          <nuxt-button :to="gencyUrl" id="cta-intermediate-1" class="mt-8" size="xl" round>
             <icon name="i-lucide:external-link" />
             Learn more
           </nuxt-button>
@@ -35,25 +35,25 @@
 
       <div class="grid grid-cols-1 xl:grid-cols-3">
         <div class="p-10 flex-col place-items-center">
-          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="Person practicing yoga for physical health" />
+          <nuxt-img :alt="get('legalName')" src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" />
           <h2 class="text-3xl font-bold mb-5">Physical Health</h2>
           <p class="leading-7">Regular yoga practice improves flexibility, strength, and cardiovascular health, promoting overall physical well-being.</p>
         </div>
 
         <div class="p-10 flex-col place-items-center">
-          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="Person practicing yoga for mental clarity" />
+          <nuxt-img :alt="get('legalName')" src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" />
           <h2 class="text-3xl font-bold mb-5">Mental Clarity</h2>
           <p class="leading-7">Yoga helps reduce stress and anxiety, fostering mental clarity and emotional balance through mindfulness and meditation.</p>
         </div>
 
         <div class="p-10 flex-col place-items-center">
-          <nuxt-img src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" alt="People practicing yoga in a community setting" />
+          <nuxt-img :alt="get('legalName')" src="/images/yoga2.webp" class="aspect-square object-fill w-30 mb-8" />
           <h2 class="text-3xl font-bold mb-5">Community Connection</h2>
           <p class="leading-7">Yoga brings people together, creating supportive communities that encourage personal growth and social connection.</p>
         </div>
       </div>
 
-      <nuxt-button id="cta-intermediate-2" to="/" size="xl">
+      <nuxt-button :to="gencyUrl" id="cta-intermediate-2" size="xl">
         <icon name="i-lucide:external-link" />
         Learn more
       </nuxt-button>
@@ -77,15 +77,15 @@
             <p class="leaning-7">We lead with integrity, kindness, and bold action to get closer to our vision: More Yoga, Better World.</p>
           </div>
 
-          <nuxt-button id="cta-intermediate-3" to="/" size="xl">
+          <nuxt-button :to="gencyUrl" id="cta-intermediate-3" size="xl">
             <icon name="i-lucide:external-link" />
             Learn more
           </nuxt-button>
         </div>
 
-        <client-only>
-          <nuxt-img v-motion-slide-visible-once-right :delay="300" src="/images/yoga3.jpg" class="h-full w-full rounded-3xl" alt="People practicing yoga in a community setting" />
-        </client-only>
+        <motion :preset="VueUseMotions.SlideVisibleOnceRight" :delay="300">
+          <nuxt-img :alt="get('legalName')" src="/images/yoga3.jpg" class="h-full w-full rounded-3xl" />
+        </motion>
       </div>
     </section>
 
@@ -104,7 +104,7 @@
           By supporting this work, you help ensure that yoga reaches more communities as a tool for well-being, resilience, and connection.
         </p>
 
-        <nuxt-button id="cta-intermediate-4" to="/" size="xl" class="mt-10">
+        <nuxt-button :to="gencyUrl" id="cta-intermediate-4" size="xl" class="mt-10">
           <icon name="i-lucide:external-link" />
           Learn more
         </nuxt-button>
@@ -129,12 +129,35 @@
 </template>
 
 <script setup lang="ts">
-/**
- * General
- */
-
 definePageMeta({
   label: 'Home'
 })
 
+/**
+ * SEO
+ */
+
+const { get } = useBusinessDetails()
+
+const url = useRequestURL()
+
+useSeoMeta({
+  title: `Demo Yoga Platform by ${get('name')}`,
+  description: get('description'),
+  author: get('legalName'),
+  twitterDescription: get('description'),
+  twitterCard: 'summary_large_image',
+  ogTitle: `Demo Yoga Platform by ${get('name')}`,
+  ogDescription: get('description'),
+  ogUrl: url.href
+})
+
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: `Demo Yoga Platform by ${get('name')}`,
+    description: get('description')
+  })
+}
+
+const gencyUrl = computed(() => get('websiteProvider').url)
 </script>

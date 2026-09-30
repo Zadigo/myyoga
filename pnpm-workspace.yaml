@@ -63,3 +63,4 @@ minimumReleaseAgeExclude:
   - oxfmt@0.57.0
   - oxlint@1.72.0
   - tailwindcss@4.3.2
+  - nuxt-skew-protection@1.6.1

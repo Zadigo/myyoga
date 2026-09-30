@@ -2,7 +2,7 @@
   <footer class="bg-primary-900 px-6 md:px-16 lg:px-24 xl:px-32">
     <div class="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-primary-500/30 text-primary-50 xl:py-20">
       <div>
-        <img class="w-34 md:w-32" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoColored.svg" alt="dummyLogoColored" />
+        <nuxt-img :src="get('logo')" :alt="get('legalName')" class="w-34 md:w-32" />
         <p class="max-w-102.5 mt-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum unde quaerat eveniet cumque accusamus atque qui error quo enim fugiat?</p>
       </div>
 
@@ -45,3 +45,7 @@
     </p>
   </footer>
 </template>
+
+<script setup lang="ts">
+const { get } = useBusinessDetails()
+</script>

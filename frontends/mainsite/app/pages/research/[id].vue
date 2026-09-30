@@ -39,5 +39,35 @@ definePageMeta({
 
 const route = useRoute()
 
-const { data } = await useAsyncData(`research-${route.params.id}`, async () => await $fetch<ResearchPaper[]>(`/api/research/${route.params.id}`), { default: () => [] as ResearchPaper[] })
+const { data } = await useAsyncData(
+  `research-${route.params.id}`, 
+  async () => await $fetch<ResearchPaper[]>(`/api/research/${route.params.id}`), 
+  { default: () => [] as ResearchPaper[] }
+)
+
+/**
+ * SEO
+ */
+
+const { get } = useBusinessDetails()
+
+const url = useRequestURL()
+
+useSeoMeta({
+  title: `Demo Yoga Platform by ${get('name')}`,
+  description: get('description'),
+  author: get('legalName'),
+  twitterDescription: get('description'),
+  twitterCard: 'summary_large_image',
+  ogTitle: `Demo Yoga Platform by ${get('name')}`,
+  ogDescription: get('description'),
+  ogUrl: url.href
+})
+
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: `Demo Yoga Platform by ${get('name')}`,
+    description: get('description')
+  })
+}
 </script>

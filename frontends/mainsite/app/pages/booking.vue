@@ -2,7 +2,7 @@
   <div id="pricing" role="main" class="relative mb-20 px-10 space-y-10 mt-[calc(70px+1rem)]">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-400 mx-auto">
       <div class="hidden lg:block bg-primary-100 rounded-3xl overflow-hidden">
-        <nuxt-img src="/images/yoga3.jpg" class="w-full" alt="Some value" />
+        <nuxt-img :alt="get('legalName')" src="/images/yoga3.jpg" class="w-full" />
       </div>
 
       <div class="bg-primary-100 dark:bg-primary-800 p-10 xl:p-20 rounded-3xl space-y-5">
@@ -20,8 +20,8 @@
             <nuxt-input class="col-span-4 lg:col-span-2" size="xl" name="lastname" placeholder="Lastname" />
             <nuxt-input class="col-span-4 lg:col-span-4" size="xl" name="email" placeholder="Email" />
 
-            <div class="mt-10 xl:mt-0 flex justify-end">
-              <nuxt-button id="cta-book-meeting" size="xl">
+            <div class="mt-10 xl:mt-0">
+              <nuxt-button id="cta-book-meeting" size="xl" @click="goToGency">
                 <icon name="lucide:check" />
                 Submit
               </nuxt-button>
@@ -41,4 +41,34 @@
 definePageMeta({
   label: 'Booking'
 })
+
+const { get } = useBusinessDetails()
+
+const goToGency = () => {
+  window.location.href = get('websiteProvider').url
+}
+
+/**
+ * SEO
+ */
+
+const url = useRequestURL()
+
+useSeoMeta({
+  title: `Demo Gallery by ${get('name')}`,
+  description: get('description'),
+  author: get('legalName'),
+  twitterDescription: get('description'),
+  twitterCard: 'summary_large_image',
+  ogTitle: `Demo Gallery by ${get('name')}`,
+  ogDescription: get('description'),
+  ogUrl: url.href
+})
+
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: `Demo Gallery by ${get('name')}`,
+    description: get('description')
+  })
+}
 </script>

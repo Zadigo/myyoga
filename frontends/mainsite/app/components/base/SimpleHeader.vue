@@ -5,11 +5,11 @@
     </slot>
 
     <div class="space-y-10">
-      <client-only>
-        <h2 v-motion-slide-bottom :delay="100" class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">
+      <motion :preset="VueUseMotions.SlideBottom" :delay="100">
+        <h2 class="text-3xl md:text-4xl xl:text-7xl font-bold mb-10 text-primary-200">
           {{ title }}
         </h2>
-      </client-only>
+      </motion>
       
       <p class="leading-7">
         {{ description }}
@@ -19,6 +19,8 @@
 </template>
 
 <script lang="ts" setup>
+import { VueUseMotions } from '~/constants/motion';
+
 defineProps<{
   title: string,
   description: string

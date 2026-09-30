@@ -8,7 +8,7 @@
       <client-only>
         <motion-group preset="pop">
           <div v-for="i in 30" :key="i" class="overflow-hidden rounded-3xl relative">
-            <nuxt-img src="/images/yoga2.jpg" class="aspect-square object-cover hover:scale-110 transition duration-300" width="100%" height="100%" alt="Some value" />
+            <nuxt-img :alt="get('legalName')" src="/images/yoga2.jpg" class="aspect-square object-cover hover:scale-110 transition duration-300" width="100%" height="100%" />
             
             <div class="text-primary-50 absolute bottom-10 left-10">
               <h2 class="font-bold text-2xl">
@@ -34,4 +34,30 @@
 definePageMeta({
   label: 'Gallery'
 })
+
+/**
+ * SEO
+ */
+
+const { get } = useBusinessDetails()
+
+const url = useRequestURL()
+
+useSeoMeta({
+  title: `Demo Gallery by ${get('name')}`,
+  description: get('description'),
+  author: get('legalName'),
+  twitterDescription: get('description'),
+  twitterCard: 'summary_large_image',
+  ogTitle: `Demo Gallery by ${get('name')}`,
+  ogDescription: get('description'),
+  ogUrl: url.href
+})
+
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: `Demo Gallery by ${get('name')}`,
+    description: get('description')
+  })
+}
 </script>
