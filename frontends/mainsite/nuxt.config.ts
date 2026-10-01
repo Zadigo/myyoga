@@ -17,6 +17,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/test-utils/module',
     '@nuxtjs/seo',
+    '@vercel/speed-insights',
+    '@vercel/analytics',
     'nuxt-skew-protection',
     'nuxt-ai-ready'
   ],
