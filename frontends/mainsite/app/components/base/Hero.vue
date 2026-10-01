@@ -33,7 +33,7 @@
     <client-only>
       <template #default>
         <video class="absolute top-0 z-1 w-full h-screen aspect-video object-cover" autoplay muted loop>
-          <source src="/vid1.mp4" type="video/mp4">
+          <source src="https://gency313.s3.us-east-1.amazonaws.com/freelance/vid1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </template>
