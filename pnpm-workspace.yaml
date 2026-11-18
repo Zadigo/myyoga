@@ -64,3 +64,18 @@ minimumReleaseAgeExclude:
   - oxlint@1.72.0
   - tailwindcss@4.3.2
   - nuxt-skew-protection@1.6.1
+permissions:
+  nuxt-ai-ready:
+    skills: true
+  nuxt-skew-protection:
+    skills: true
+  nuxtseo-layer-devtools:
+    skills: true
+skills:
+  dirs:
+    - .agent/skills
+    - .agents/skills
+    - .claude/skills
+    - .cursor/skills
+    - .gemini/skills
+    - .github/skills
